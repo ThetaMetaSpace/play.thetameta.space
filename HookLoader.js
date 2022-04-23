@@ -101,7 +101,7 @@ MutilPlayerSendMessage = function (str) {
             );
         });
     } else {
-        if (socket) socket.send(msg.text);
+        if (socket && socket.readyState == 1) socket.send(msg.text);
     }
 };
 
